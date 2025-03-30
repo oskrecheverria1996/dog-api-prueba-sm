@@ -47,7 +47,6 @@ export class BreedsComponent implements OnInit, OnDestroy {
   }
 
   search($event) {
-    // this.tt!.filter($event.target.value, 'name', 'lenient');
     this.tt!.filterGlobal($event.target.value, 'contains');
   }
   

@@ -36,8 +36,25 @@
             <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
                 <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
                     <td>
-                        <p-treeTableToggler [rowNode]="rowNode" [ngbPopover]="rowNode?.node?.children?.length > 0 ? 'Ver subrazas' : ''" placement="top" container="body" triggers="mouseenter:mouseleave"></p-treeTableToggler>
-                        <span [ngbPopover]="'Ver imagen'" placement="top" container="body" triggers="mouseenter:mouseleave">{{ rowNode.node.key | titlecase }}</span>
+                        <p-treeTableToggler [rowNode]="rowNode" 
+                            [ngbPopover]="rowNode?.node?.children?.length > 0 ? 'Ver subrazas' : ''" 
+                            placement="top" 
+                            container="body" 
+                            triggers="mouseenter:mouseleave">
+                        </p-treeTableToggler>
+                        <span [ngbPopover]="'Ver imagen'" 
+                            placement="top" 
+                            container="body" 
+                            triggers="mouseenter:mouseleave">
+                            {{ rowNode.node.key | titlecase }}
+                        </span>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="1" class="text-center">
+                        No hay resultados para mostrar
                     </td>
                 </tr>
             </ng-template>
