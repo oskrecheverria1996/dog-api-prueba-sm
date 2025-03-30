@@ -1,0 +1,13 @@
+.container-height-fixed {
+    height: fit-content !important ;
+    min-height: 75vh !important;
+    max-height: none !important;
+}
+
+:host.container-no-height-fixed {
+    .card.bg-white {
+        height: fit-content !important ;
+        min-height: 75vh !important;
+        max-height: none !important;
+    }
+}

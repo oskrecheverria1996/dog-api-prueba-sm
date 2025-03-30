@@ -1,0 +1,28 @@
+<!-- Page Header -->
+<app-page-header>
+</app-page-header>
+<!-- Page Body -->
+<div class="container-fluid mt--5">
+  <div class="justify-content-center row">
+    <div class="col-4">
+        <div class="card bg-white container-height-fixed" id="page-header">
+            <div class="card-body bg-transparent p-3">
+              <app-loading *ngIf="(isLoading$ | async)"></app-loading>
+              <div *ngIf="!(isLoading$ | async)">
+                <div class="row justify-content-center" *ngIf="(breedData$ | async) as breedData">
+                    <img [src]="breedData.message" height="250" width="250" class="rounded-circle">
+                </div>
+                <div class="row">
+                  </div>
+                <div class="text-center pb-3 pt-3">
+                  <h2><i class="fa fa-paw"></i>&nbsp;
+                    <bold>{{ breed | titlecase }}</bold>&nbsp;
+                    <small>{{ subBreed }}</small>
+                  </h2>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<!-- Page Header -->
+<div class="card header bg-gradient-danger pb-5 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row">
+          <!-- <div class="col-xl-3 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
+                    <span class="h2 font-weight-bold mb-0">350,897</span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                      <i class="fas fa-chart-bar"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-3 mb-0 text-muted text-sm">
+                  <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                  <span class="text-nowrap">Since last month</span>
+                </p>
+              </div>
+            </div>
+          </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Body -->
+<div class="container-fluid mt--5">
+  <div class=" row">
+    <div class="col">
+        <div class="card bg-white container-height-fixed" id="page-header">
+            <div class="card-body bg-transparent p-3">
+              <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>{{ product.code }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.quantity }}</td>
+                    </tr>
+                </ng-template>
+              </p-table>
+              <p-paginator (onPageChange)="onPageChange($event)" [rows]="10" [totalRecords]="6" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
