@@ -36,8 +36,8 @@
             <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
                 <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
                     <td>
-                        <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
-                        {{ rowNode.node.key | titlecase }}
+                        <p-treeTableToggler [rowNode]="rowNode" [ngbPopover]="rowNode?.node?.children?.length > 0 ? 'Ver subrazas' : ''" placement="top" container="body" triggers="mouseenter:mouseleave"></p-treeTableToggler>
+                        <span [ngbPopover]="'Ver imagen'" placement="top" container="body" triggers="mouseenter:mouseleave">{{ rowNode.node.key | titlecase }}</span>
                     </td>
                 </tr>
             </ng-template>
