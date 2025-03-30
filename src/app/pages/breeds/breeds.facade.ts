@@ -21,12 +21,10 @@ export class BreedsFacade {
             (res) => {
                 let list = Object.entries(res.message).map(([key, value]) => (
                     { 
-                        key,
                         data: {name: key},
                         children: Object.entries(value).map(([item, val]) => (
                             { 
-                                key: val,
-                                data: {name: key},
+                                data: {name: val},
                             }
                         ))
                     }

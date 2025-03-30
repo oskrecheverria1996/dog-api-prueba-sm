@@ -40,9 +40,9 @@ export class BreedsComponent implements OnInit, OnDestroy {
   
   edit(event) {
     if(!event.node.parent) {
-      this.router.navigate(['breeds/' + event.node.key]);
+      this.router.navigate(['breeds/' + event.node.data.name]);
     } else{
-      this.router.navigate(['breeds/' + event.node.parent.key + '/' + event.node.key]);
+      this.router.navigate(['breeds/' + event.node.parent.data.name + '/' + event.node.data.name]);
     }
   }
 
